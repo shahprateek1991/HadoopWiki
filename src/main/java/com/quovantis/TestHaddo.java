@@ -1,4 +1,9 @@
 package com.quovantis;
+/**
+ * Schema of the wikipedia data file
+ * |Language|Resource|Hits|Size 
+ */
+
 
 import java.io.IOException;
 import java.net.URI;
@@ -59,12 +64,12 @@ public class TestHaddo {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(LongWritable.class);
         job.setInputFormatClass(TextInputFormat.class);
-        FileInputFormat.addInputPath(job, new Path("/In/pagecounts-20160404-110000"));
+        FileInputFormat.addInputPath(job, new Path("/In/pagecounts-20160404-110000")); // Input file
      // configuration should contain reference to your namenode
         FileSystem fs = FileSystem.get(conf);
         // true stands for recursively deleting the folder you gave
         fs.delete(new Path("/output/wikipedia"), true);
-        FileOutputFormat.setOutputPath(job, new Path("/output/wikipedia"));
+        FileOutputFormat.setOutputPath(job, new Path("/output/wikipedia")); //Output file
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 
