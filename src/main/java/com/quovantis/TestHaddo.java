@@ -61,7 +61,7 @@ public class TestHaddo {
         job.setInputFormatClass(TextInputFormat.class);
         FileInputFormat.addInputPath(job, new Path("/In/pagecounts-20160404-110000"));
      // configuration should contain reference to your namenode
-        FileSystem fs = FileSystem.get(new URI("hdfs://localhost:54310"),conf);
+        FileSystem fs = FileSystem.get(conf);
         // true stands for recursively deleting the folder you gave
         fs.delete(new Path("/output/wikipedia"), true);
         FileOutputFormat.setOutputPath(job, new Path("/output/wikipedia"));
