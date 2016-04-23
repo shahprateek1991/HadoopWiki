@@ -8,4 +8,4 @@ Create a jar of the program using the command
 
 Deploy on the haddop ecosytem and run using the follwing command.
 
-<pre> hadoop jar 1.jar TestHaddo </pre>
+<pre> hadoop jar <name_of_jar>.jar TestHaddo </pre>
